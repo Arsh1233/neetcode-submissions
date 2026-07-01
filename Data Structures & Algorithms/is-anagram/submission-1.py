@@ -1,0 +1,10 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        mp1={}
+        mp2={}
+        if len(t)!=len(s):
+            return False
+        for i in range(len(s)):
+            mp1[(s[i])]= 1 + mp1.get(s[i],0)
+            mp2[(t[i])]= 1 + mp2.get(t[i],0)
+        return mp1==mp2
